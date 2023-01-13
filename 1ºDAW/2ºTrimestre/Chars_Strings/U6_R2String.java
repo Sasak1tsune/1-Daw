@@ -31,10 +31,15 @@ public class U6_R2String{
             case 5:
                 break;
             case 6://INDEXOF
-                String frase = peticionCadena();
-                String subfrase = peticionCadena();
-                buscarSubcadena(frase, subfrase);
-                break;    
+                String fraseCaso6 = peticionCadena();
+                String subfraseCaso6 = peticionCadena();
+                buscarSubcadena(fraseCaso6, subfraseCaso6);
+                break;
+            case 7:
+                String fraseCaso7 = peticionCadena();
+                String subfraseCaso7 = peticionCadena();
+                buscarSubcadenaIterativo(fraseCaso7, subfraseCaso7);
+                break;        
             case 0:
                 System.out.println("Seguro que quiere salir?\n(s/n)");
                 char salida = entrada.next().charAt(0);
@@ -46,12 +51,27 @@ public class U6_R2String{
         }               
     }while(salirMenu==true);
     }
+public static void buscarSubcadenaIterativo(String frase, String subfrase){
+    int tamaño = frase.length();
+    int i = 0;
+    int pos;
+    int inicio = 0;
+    do{
+        pos = frase.indexOf(subfrase, inicio);
+        inicio = pos;
+        System.out.println(pos);
+        i++;
+    }while(i<tamaño);
+    if (pos>=0){
+        System.out.println("La frase "+frase+" Contiene la subfrase "+subfrase);
+    }
+}    
 public static void buscarSubcadena(String frase, String subfrase){
     int pos = frase.indexOf(subfrase);
     if (pos>=0){
         System.out.println("La frase "+frase+" Contiene la subfrase "+subfrase+" y está en la posición "+pos);
     }
-};
+}
 public static void mostrarMenu() {
     System.out.println("____________________________________________\n* Bienvenido pibe, selecciona algúna opción*\n*                                          *\n*    Opción 1: Comparación de carácteres   *\n*    Opción 2: ____________________________*\n*    Opción 3: ____________________________*\n*__________________________________________*");
 }
