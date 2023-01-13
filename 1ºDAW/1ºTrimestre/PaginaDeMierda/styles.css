@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(152, 210, 210);
+}
+header {
+}
+nav{
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.337);
+    
+}
+nav .barra{
+    display: flex;
+    float: right;
+    margin-left: 2px;
+}
